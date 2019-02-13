@@ -11,4 +11,11 @@
 <%end%>
 </ul>
 
-<%= link_to "New review" ,  new_restaurant_review_path(@restaurant) %>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit "add a review", class: "btn btn-primary" %>
+<% end %>
+
+
